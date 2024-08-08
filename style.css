@@ -573,6 +573,7 @@ h1 span .stroke {
 /* generative ain img */
 .ai-tools{
     margin: 100px 10px;
+    width: 100%;
 }
 .img-bg{
     background: radial-gradient(50% 50% at 50% 50%, rgba(142, 177, 223, .24) 0, rgba(161, 155, 228, 0) 100%), radial-gradient(40% 40% at 50% 50%, rgba(255, 134, 189, .14) 0, rgba(222, 141, 178, 0) 100%);

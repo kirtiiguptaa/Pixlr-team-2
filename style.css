@@ -1634,6 +1634,7 @@ section.design{
     }
     .rev-inner
     {
+        padding: 0;
         margin-top: 50px !important;
     }
 }

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator: Turn Text to Images, generative art and generated photos</title>
+    <link rel="stylesheet" href="generate.css">
+    <link rel="stylesheet" href="header.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+   />
+   <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+
+  <link
+    rel="stylesheet"
+    href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+  />
+</head>
+<body>
+    
+    <main>
+        <div class="wrap">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <a href="index.html"><img src="images/pixlr-logo.svg" alt=""></a>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="#"><img src="images/user.svg" alt="">Sign up / Log in</a></li>
+                        <li><a href="#"><img src="images/trypermium.svg" alt="">Try premium</a></li>
+                        <li><button><img src="images/notification.svg" alt=""></button></li>
+                        <div class="dropdown">
+                            <button class="dropbtn"><img src="images/menu.svg" alt=""></button>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="#"><img src="images/e-icon.svg" alt="">Pixlr Editor</a>
+                                    <a href="#"><img src="images/x-icon.svg" alt="">Pixlr Express</a>
+                                    <a href="#"><img src="images/d-icon.svg" alt="">Pixlr Designer</a>
+                                    <a href="#"><img src="images/b-icon.svg" alt="">Batch Editor</a>
+                                    <a href="#"><img src="images/bg-icon.svg" alt="">Remove BG</a>
+                                    <br class="mob-menu">
+                                    <a href="#" class="mob-menu"><img src="images/person.svg" alt="">Sign up / Log in</a>
+                                    <a href="#" class="mob-menu"><img src="images/bell.svg" alt="">Latest News</a>
+                                    <br>
+                                    <a href="#"><img src="images/face-swap 2.svg" alt="">AI Face Swap</a>
+                                    <a href="#"><img src="images/image-generator.svg" alt="">AI Image Generator</a>
+                                    <a href="#"><img src="images/photo-collage.svg" alt="">Phot Collage Maker</a>
+                                    <details>
+                                        <summary>
+                                            <img src="images/tool.svg" alt="">More Tools ..
+                                        </summary>
+                                        <a href="#"><img src="images/converter.svg" alt="">File Converter</a>
+                                    </details>
+                                    <br>
+                                    <a href="#"><img src="images/mobile.svg" alt="">Mobile Apps</a>
+                                    <a href="#"><img src="images/desktop.svg" alt="">Desktop Apps</a>
+                                    <a href="#"><img src="images/templates.svg" alt="">Design Templates</a>
+                                    <br>
+                                    <a href="#"><img src="images/video.svg" alt="">Video Tutorials</a>
+                                    <a href="#"><img src="images/learn.svg" alt="">Learn & Education</a>
+                                    <a href="#"><img src="images/support.svg" alt="">Contact & Support</a>
+                                    <a href="#"><img src="images/premium (2).svg" alt="">Pricing & Free Trial</a>
+                                  </div>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+            <div class="generator">
+                <h1>AI Image Generator</h1>
+                <p class="description">Generate an image using Generative AI by describing what you want to see, all images are published publicly by default. </p>
+                <div id="generator-main" class="minimized">
+                    <div id="#generator-main-modal" class="but">
+                        <div id="generator-add-img" class="button outline">
+                            <img src="images/add-image.svg" width="18" height="18">
+                        </div>
+                        <div id="generator-prompt" class="prompt but">
+                            <div id="generator-prompt-img"></div>
+                            <div id="generator-prompt-text" class="but">
+                                <label>Description prompt</label>
+                                <textarea id="generator-positive" class="but" placeholder="What do you want to see?" rows="1"></textarea>
+                                <div id="prompt-negative" style="display: none;">
+                                    <label>Remove (negative prompt)</label>
+                                    <textarea id="generator-negative" type="text" placeholder="What do you want to avoid?" rows="1" style="height: 2px;"></textarea>
+                                </div>
+                                <div id="generator-prop">
+                                    <div id="aspect-type" class="button outline med aspect-square">
+                                        <span id="aspect-type-label"><div class="icon" id="aspect-icon"></div>Square aspect</span>
+                                        <ul class="prop-drop style-list" id="generator-aspect-selector">
+                                            <li id="aspect-square" data="square" class="selected aspect"><div class="aspect-square"></div><div class="name">Square</div></li>
+                                            <li id="aspect-wide" class="aspect" data="wide"><div class="aspect-wide"></div><div class="name">Wide</div></li>
+                                            <li id="aspect-tall" class="aspect" data="tall"><div class="aspect-tall"></div><div class="name">Tall</div></li>
+                                        </ul>
+                                    </div>
+                                    <div id="style-type" class="button outline med none">
+                                        <img id="style-type-img" hidden="">
+                                        <span id="style-type-label" class="style">No style</span>
+                                        <ul class="prop-drop style-list wide" id="generator-style-selector">
+                                            <li id="style-none" class="selected style-select" data="none"><img src="images/value-none.svg" class="ic" loading="lazy" width="32" height="32"><div class="name">None</div></li>
+                                            <li id="style-enhance" class="style-select" data="enhance"><img src="images/enhance.webp" loading="lazy" width="32" height="32"><div class="name">Enhance</div></li>
+                                            <li id="style-anime" class="style-select" data="anime"><img src="images/anime.webp" loading="lazy" width="32" height="32"><div class="name">Anime</div></li>
+                                            <li id="style-photographic" class="style-select" data="photographic"><img src="images/photographic.webp" loading="lazy" width="32" height="32"><div class="name">Photographic</div></li>
+                                            <li id="style-digital-art" class="style-select" data="digital-art"><img src="images/digital-art.webp" loading="lazy" width="32" height="32"><div class="name">Digital Art</div></li>
+                                            <li id="style-comic-book" class="style-select" data="comic-book"><img src="images/comic-book.webp" loading="lazy" width="32" height="32"><div class="name">Comic Book</div></li>
+                                            <li id="style-fantasy-art" class="style-select" data="fantasy-art"><img src="images/fantasy-art.webp" loading="lazy" width="32" height="32"><div class="name">Fantasy Art</div></li>
+                                            <li id="style-analog-film" class="style-select" data="analog-film"><img src="images/analog-film.webp" loading="lazy" width="32" height="32"><div class="name">Analog Film</div></li>
+                                            <li id="style-neon-punk" class="style-select" data="neon-punk"><img src="images/neon-punk.webp" loading="lazy" width="32" height="32"><div class="name">Neon Punk</div></li>
+                                            <li id="style-isometric" class="style-select" data="isometric"><img src="images/isometric.webp" loading="lazy" width="32" height="32"><div class="name">Isometric</div></li>
+                                            <li id="style-low-poly" class="style-select" data="low-poly"><img src="images/low-poly.webp" loading="lazy" width="32" height="32"><div class="name">Low Poly</div></li>
+                                            <li id="style-origami" class="style-select" data="origami"><img src="images/origami.webp" loading="lazy" width="32" height="32"><div class="name">Origami</div></li>
+                                            <li id="style-line-art" class="style-select" data="line-art"><img src="images/line-art.webp" loading="lazy" width="32" height="32"><div class="name">Line Art</div></li>
+                                            <li id="style-craft-clay" class="style-select" data="craft-clay"><img src="images/craft-clay.webp" loading="lazy" width="32" height="32"><div class="name">Craft Clay</div></li>
+                                            <li id="style-cinematic" class="style-select" data="cinematic"><img src="images/cinematic.webp" loading="lazy" width="32" height="32"><div class="name">Cinematic</div></li>
+                                            <li id="style-3d-model" class="style-select" data="3d-model"><img src="images/3d-model.webp" loading="lazy" width="32" height="32"><div class="name">3D Model</div></li>
+                                            <li id="style-pixel-art" class="style-select" data="pixel-art"><img src="images/pixel-art.webp" loading="lazy" width="32" height="32"><div class="name">Pixel Art</div></li>
+                                        </ul>
+                                    </div>
+                                    <div id="color-type" class="button outline med none">
+                                        <img id="color-type-img" hidden="">
+                                        <span id="color-type-label" class="color">No color</span>
+                                        <ul class="prop-drop style-list" id="generator-color-selector">
+                                            <li id="color-none" class="selected color-selected" data="none"><img src="images/value-none.svg" class="ic" loading="lazy" width="32" height="32"><div class="name">None</div></li>
+                                            <li id="color-warm-tone" class="color-selected" data="warm-tone"><img src="images/warm-tone.webp" loading="lazy" width="32" height="32"><div class="name">Warm tone</div></li>
+                                            <li id="color-cool-tone" class="color-selected" data="cool-tone"><img src="images/cool-tone.webp" loading="lazy" width="32" height="32"><div class="name">Cool tone</div></li>
+                                            <li id="color-muted-colors" class="color-selected" data="muted-colors"><img src="images/muted-colors.webp" loading="lazy" width="32" height="32"><div class="name">Muted Colors</div></li>
+                                            <li id="color-vibrant-colors" data="vibrant-colors"><img src="images/vibrant-colors.webp" loading="lazy" width="32" class="color-selected" height="32"><div class="name">Vibrant Colors</div></li>
+                                            <li id="color-pastel-colors" class="color-selected" data="pastel-colors"><img src="images/pastel-colors.webp" loading="lazy" width="32" height="32"><div class="name">Pastel Colors</div></li>
+                                            <li id="color-black-and-white" class="color-selected" data="black-and-white"><img src="images/black-and-white.webp" loading="lazy" width="32" height="32"><div class="name">Black and White</div></li>
+                                        </ul>
+                                    </div>
+                                    <div id="lighting-type" class="button outline med none">
+                                        <img id="lighting-type-img" hidden="">
+                                        <span id="lighting-type-label" class="light">No lighting</span>
+                                        <ul class="prop-drop style-list wide" id="generator-lighting-selector">
+                                            <li id="lighting-none" class="selected light-selected" data="none"><img src="images/value-none.svg" class="ic" loading="lazy" width="32" height="32"><div class="name">None</div></li>
+                                            <li id="lighting-studio" class="light-selected" data="studio"><img src="images/studio.webp" loading="lazy" width="32" height="32"><div class="name">Studio</div></li>
+                                            <li id="lighting-backlight" class="light-selected" data="backlight"><img src="images/backlight.webp" loading="lazy" width="32" height="32"><div class="name">Backlight</div></li>
+                                            <li id="lighting-sunlight" class="light-selected" data="sunlight"><img src="images/sunlight.webp" loading="lazy" width="32" height="32"><div class="name">Sunlight</div></li>
+                                            <li id="lighting-dramatic" class="light-selected" data="dramatic"><img src="images/dramatic.webp" loading="lazy" width="32" height="32"><div class="name">Dramatic</div></li>
+                                            <li id="lighting-low-light" class="light-selected" data="low-light"><img src="images/low-light.webp" loading="lazy" width="32" height="32"><div class="name">Low light</div></li>
+                                            <li id="lighting-volumetric" class="light-selected" data="volumetric"><img src="images/volumetric.webp" loading="lazy" width="32" height="32"><div class="name">Volumetric</div></li>
+                                            <li id="lighting-rim-lighting" class="light-selected" data="rim-lighting"><img src="images/rim-lighting.webp" loading="lazy" width="32" height="32"><div class="name">Rim lighting</div></li>
+                                            <li id="lighting-dimly-lit" class="light-selected" data="dimly-lit"><img src="images/dimly-lit.webp" loading="lazy" width="32" height="32"><div class="name">Dimly lit</div></li>
+                                            <li id="lighting-golden-hour" class="light-selected" data="golden-hour"><img src="images/golden-hour.webp" loading="lazy" width="32" height="32"><div class="name">Golden hour</div></li>
+                                            <li id="lighting-crepuscular-rays" class="light-selected" data="crepuscular-rays"><img src="images/crepuscular-rays.webp" loading="lazy" width="32" height="32"><div class="name">Crepuscular rays</div></li>
+                                        </ul>
+                                    </div>
+                                    <div id="composition-type" class="button outline med none">
+                                        <img id="composition-type-img" hidden="">
+                                        <span id="composition-type-label" class="composition">No composition</span>
+                                        <ul class="prop-drop style-list" id="generator-composition-selector">
+                                            <li id="composition-none" class="selected composition-selected" data="none"><img src="images/value-none.svg" class="ic" loading="lazy" width="32" height="32"><div class="name">None</div></li>
+                                            <li id="composition-blurry-background" class="composition-selected" data="blurry-background"><img src="images/blurry-background.webp" loading="lazy" width="32" height="32"><div class="name">Blurry background</div></li>
+                                            <li id="composition-close-up" class="composition-selected" data="close-up"><img src="images/close-up.webp" loading="lazy" width="32" height="32"><div class="name">Close up</div></li>
+                                            <li id="composition-wide-angle" class="composition-selected" data="wide-angle"><img src="images/wide-angle.webp" loading="lazy" width="32" height="32"><div class="name">Wide angle</div></li>
+                                            <li id="composition-narrow-depth-of-field" class="composition-selected" data="narrow-depth-of-field"><img src="images/narrow-depth-of-field.webp" loading="lazy" width="32" height="32"><div class="name">Narrow depth of field</div></li>
+                                            <li id="composition-shot-from-below" class="composition-selected" data="shot-from-below"><img src="images/shot-from-below.webp" loading="lazy" width="32" height="32"><div class="name">Shot from below</div></li>
+                                            <li id="composition-shot-from-above" class="composition-selected" data="shot-from-above"><img src="images/shot-from-above.webp" loading="lazy" width="32" height="32"><div class="name">Shot from above</div></li>
+                                            <li id="composition-macrophotography" class="composition-selected" data="macrophotography"><img src="images/macrophotography.webp" loading="lazy" width="32" height="32"><div class="name">Macrophotography</div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons but" id="generator-bar">
+
+                            <div class="generator-btn" style="margin-right:20px; align-self: flex-start;">
+                                <input type="checkbox" id="negative-prompt-toggle">
+                                <label class="switch" for="negative-prompt-toggle"><span></span> Negative prompt</label>
+                            </div>
+    
+                            <div class="generator-btn" style="margin-right:auto; align-self: flex-start;">
+                                <input type="checkbox" id="private-prompt-toggle">
+                                <label class="switch" for="private-prompt-toggle"><span></span> Make private</label>
+                            </div>
+    
+                            <div id="generator-credit-count" class="credit-meter generator-btn" style="display: none;"></div>
+                            <div id="generator-buttons" class="but">
+                                <div id="generator-clear" class="button med outline">Clear</div>
+                                <div id="generator-random" class="button med outline">Rnd</div>
+                                <div id="generator-generate" class="button med positive but">Generate (4c)</div>
+                            </div>
+                        </div>
+                        <div id="generator-result" class="pane-holder"></div>
+                    </div>
+                </div>
+                <div id="generator-feed-login" class="top-30">
+
+                    <div id="generator-feed-login-examples">
+                        <img loading="lazy" src="images/medium.webp" width="500" height="500" alt="Steampunk boy with medium length strawberry blond hair with a pink and orange over coat with goggles on the top of his head">
+                        <img loading="lazy" src="images/medium2.webp" width="500" height="500" alt="chiness day cat">
+                        <img loading="lazy" src="images/medium3.webp" width="500" height="500" alt="Scary robot">
+                        <img loading="lazy" src="images/medium4.webp" width="500" height="500" alt="photo of a rhino dressed suit and tie sitting at a table in a bar with a bar stools, award winning photography, Elke vogelsang">
+                        <img loading="lazy" src="images/medium5.webp" width="500" height="500" alt="DJ Hillbilly hitch hiker hanging in the back of carnival truck with a  bindle and a dj set on his lap facing towards the camera while the truck drives off into the sunset  (vibrant colors) (golden hour) (blurry background)">
+                        <img loading="lazy" src="images/medium6.webp" width="500" height="500" alt="Create an image of a 25-year-old woman with beach tan skin and short blonde hair, green eyes, real person.">
+                        <img loading="lazy" src="images/medium7.webp" width="500" height="500" alt="Lord of the Rings book cover, 4k, HD, high quality, Far point-of-view, walking down multiple terrain">
+                        <img loading="lazy" src="images/medium8.webp" width="500" height="500" alt="A 14 year old boy chilling to music and looking at neon lights">
+                        <img loading="lazy" src="images/medium9.webp" width="500" height="500" alt="funny dinosaur">
+                        
+                        <img loading="lazy" src="images/medium10.webp" alt="a man in a space suit playing a guitar, inspired by Cyril Rolando, shutterstock, highly detailed illustration, full color illustration, very detailed illustration, dan mumford and alex grey style">
+                        <img loading="lazy" src="images/medium11.webp" width="500" height="500" alt="rubi fortnite sexy (warm tone) (backlight)">
+                        <img loading="lazy" src="images/medium12.webp" width="500" height="500" alt="furry dragon in sunglasses, digital art">
+                        <img loading="lazy" src="images/medium13.webp" width="500" height="500" alt="I want pictures with RJCULTISMMINI word">
+                        <img loading="lazy" src="images/medium14.webp" width="500" height="500" alt="CA DEV">   
+                        <img loading="lazy" src="images/medium15.webp" width="500" height="500" alt="steampunk makeup, in the style of vray tracing, colorful impasto, uhd image, indonesian art, fine feather details with bright red and yellow and green and pink and orange colours, intricate patterns and details, dark cyan and amber makeup. Rich colourful plumes. Victorian style.">
+                    </div>
+                    <div id="generator-feed-login-overlay">
+                        <h2>Get inspiration, text to image prompts and trending image generations; just need to login first!</h2>
+                        <div id="generator-feed-login-button" class="button large positive">Sign up / Log in</div>
+                    </div>
+                </div>
+        
+                <div id="generate-feature">
+                    <div class="row feature-img-sec-1">
+                        
+                            <div class="col-md-6 col-12">
+                                <h2>Free Online AI Image Generator</h2>
+                                <p>It's free to test out the AI Image generator and it makes creating your own images super easy. Just write a description of the image you'd like to generate and watch the text to image transformation happen in seconds.</p>
+                                <p>So simple to get the perfect images or create stunning visuals with our AI image generator. Dream it, and use text to image online to visualize it. Easily create different AI images for products, characters, and portraits at your fingertips even if it doesn't exist yet.</p>
+                                <p>Type your simple text description and our AI generator lets you create images in seconds. Powered by AI technology, our AI image creator makes it easy to bring imagination to life. The possibilities for creativity are endless!</p>
+                            </div>
+                            <div class="col-md-6 col-12 ">
+                                <div class="f-img">
+                                    <img src="/images/photo-generator.webp" alt="AI Photo Generator" loading="lazy" class="img-fluid">
+                                </div>
+                            </div>
+                        
+                    </div>
+        
+        
+        
+                    <div class="row feature-img-sec-2">
+                        
+                        <div class=" col-md-6 col-12 mod-sec-img">
+                            <div class="f-img">
+                                <img src="/images/text-to-image.webp" alt="AI Photo Generator" loading="lazy" class="img-fluid">
+                            </div>
+                        </div>
+        
+                        <div class=" col-md-6 col-12">
+                         
+                                <h2>Generate Different Art Styles with the AI picture Generator</h2>
+                                <p>Experimentation is a big part of creation. Test out different modes for your AI-generated images Pixlr Text to Image, using our style options like Enhance, Anime, Digital-Art, Neon Punk, Cinematic.</p>
+                                <p>Choose a specific style and aspect ratio to match the concept you’re going for. With our AI photo generator, easily turn text prompts into art that captures your thoughts and presents options you can place on your poster or storyboard.</p>
+                            
+                        </div>
+                      
+                    
+                </div>
+        
+                <div class="row feature-img-sec-3">
+                        
+                    <div class="col-md-6 col-12">
+                      
+                            <h2>How to make AI-generated images</h2>
+                            <p>1. Tap the input at the top and describe the image you’d like to generate. The more detail you can provide, the better.</p>
+                            <p>2. When using Text to Image, you can also choose an image style from our available options like Enhance, Anime, Digital-Art, Neon Punk, Cinematic etc. Then, click Generate image.’</p>
+                            <p>3. Additional Image Generator options include Size/Aspect ratio and color, lighting and composition preferences for you generated photo</p>
+                 
+                    </div>
+                    <div class="col-md-6 col-12 ">
+                        <div class="f-img">
+                            <img src="/images/how-to-generate.webp" alt="AI Photo Generator" loading="lazy" class="img-fluid">
+                        </div>
+                    </div>
+                
+            </div>
+                </div>
+
+                <div class="faq-section">
+                    <div>
+                        <span class="top-20">Frequently Asked</span>
+                        <h2 class="heavy top-10">Do you have a Question?</h2>
+                    </div>
+                    <div class="wrap faq top-50">
+        
+            
+                        <details>
+                    
+                        <summary>What is a AI Image Generator</summary>
+                        AI Image Generator is an innovative tool using advanced AI techniques to generate image from a text prompt, just write what you want to generate and our AI will create it.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>How does AI Generate Images?</summary>
+                        AI Image Generator creates images with vibrant colors and high quality right out of the box. Our machine learning model scans millions of internet images and associated text, enabling the AI to predict and create images tailored to your provided text. Experience next-level content creation with our AI Image Generation technology.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Does the Image Generator Create Unique Images?</summary>
+                        Absolutely! Each image produced by the AI image generator is one-of-a-kind. Save time by skipping the design process—simply input your description, and witness your vision come to life in vibrant images. The only limit to generating images is your own imagination!
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Is the Image Generator Free?</summary>
+                        Yes, Pixlr AI image generator provides a complimentary tier for you to explore our exceptional text-to-image tool. As a new user, enjoy the freedom of generating 20 images using 20 credits. Additionally, take advantage of our free trial to experience 250 credits free of charge. Bring your imagination to life swiftly. If you require assistance, simply reach out to us.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Can I use Generated AI images for commercial purposes？</summary>
+                        Yes you can, Pixlr do not retain any copyright from the text-to-image generations, but make sure you do follow the T&amp;C and our guidlines
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Who owns the copyright of the AI Generated images?</summary>
+                        This remains an open question for the global community, with no definitive answer at present. Pixlr currently refrains from asserting any copyright claims over the content generated by users. Moreover, Pixlr lacks the capability to license or grant usage rights for the output content to users. It's important to be aware that this scenario may evolve with the development of copyright laws in different jurisdictions.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Is AI Image Generator legal?</summary>
+                        While AI-generated artwork itself cannot be copyrighted or attributed to a specific individual, it's important to note that the artwork used to train the generator algorithms is often copyrighted, owned, or credited to human artists and creators. Consequently, there is a potential for copyright infringements when producing AI-generated art.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>What’s the best AI Image Generator?</summary>
+                        The best AI Image Generator and text-to-image conversion without the use of complicated software is here. Just describe your vision, and watch it instantly transform into stunning AI images for your blog or social media. Unleash your creativity effortlessly with our free Text to Image generator, available on both web and mobile.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Why use a AI Image Generator?</summary>
+                        There are plenty of benefits to using an AI Text to Image generator. Bring your ideas to life instantly without having to spend time designing from scratch. No more creative blocks as you start inspired and easily create stunning visuals. Use your AI-generated photos as eye-catching web content, quirky social media posts, or winning design proposals. Convert text to image using an AI generator—it's fun, fast, and free!
+            </details>
+        
+            
+                <details>
+            
+                <summary>Is it safe to us the Image Generator?</summary>
+                Our free AI art generator will kickstart your concepts and let artful inspiration flow. To help you use Text to Image safely and responsibly, we’ve put layers of safety measures in place, including automated reviews of input prompts for terms that might generate inappropriate content. If you do come across unsafe content, let us know: you can report it right in Pixlr. 
+            </details>
+        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=League+Spartan&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,22 @@
 }
 body {
     background-color: #1d2023 !important;
+}
+html{
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    border-radius: 12px;
+    background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #3b3f4d;
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #6C6F79
 }
 nav {
     width: 100% !important;

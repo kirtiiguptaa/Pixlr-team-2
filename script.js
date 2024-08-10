@@ -25,7 +25,7 @@ document.querySelectorAll('.aspect').forEach(function(option) {
         document.getElementById("aspect-type-label").innerHTML = selectedValue;
         // 
         console.log( AspectIcon + selectedValue);
-        document.getElementById("aspect-type-label").setAttribute('class', AspectIcon + selectedValue);
+       document.getElementById("aspect-icon").setAttribute('class', AspectIcon + selectedValue);
     });
 });
 

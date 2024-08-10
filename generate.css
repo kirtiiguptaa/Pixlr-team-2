@@ -6,6 +6,8 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif !important;
 }
+
+
 /* drop down img css */
 #generator-prop .button.med>img {
     border-radius: 50%;
@@ -188,11 +190,23 @@ nav {
     display: flex;
     align-items: center;
 }
+#aspect-type img{
+    
+    margin: 5px 5px 5px 10px;
+    
+    display: block !important;
+    background-color: #383a3e;
+border-radius: 10px !important;
+    padding: 5px;
+    height: auto;
+    width: auto ;
+    
+}
 /* #generator-prop #aspect-type {
     padding-left: 30px;
     padding-right: 15px;
-}
-#generator-prop #aspect-type:before {
+} 
+ #generator-prop #aspect-type:before {
     background-color: #383a3e;
     border-radius: 50%;
     content: " ";
@@ -201,8 +215,8 @@ nav {
     left: 8px;
     position: absolute;
     width: 28px;
-} */
-/* #generator-prop #aspect-type:after {
+}
+#generator-prop #aspect-type:after {
     border: 2px solid hsla(0, 0%, 100%, .6);
     border-radius: 2px;
     content: " ";
@@ -213,6 +227,11 @@ nav {
     width: 14px;
     z-index: 2;
 } */
+
+
+
+
+
 #generator-prop .button.med {
     border-radius: 50vh;
     border-style: dotted;
@@ -292,9 +311,11 @@ html:not(.touch) .button.positive:hover:not(.disabled):not(.working) {
 }
 .style-list li.selected .aspect-square, .style-list li.selected .aspect-tall, .style-list li.selected .aspect-wide {
     border-color: #fff;
-}
- .aspect-square {
-    height: 22px;
+} 
+/* icon bg */
+
+.aspect-square {
+    height: 22px ;
     margin: 0 2px 0 7px;
     width: 22px;
 }

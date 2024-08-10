@@ -6,6 +6,16 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif !important;
 }
+/* drop down img css */
+#generator-prop .button.med>img {
+    border-radius: 50%;
+    height: 28px;
+    left: 4px;
+    opacity: .9;
+    top: 4px;
+    width: 28px;
+}
+/*  */
 :focus {
     outline: none;
 }

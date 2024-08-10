@@ -293,24 +293,24 @@ html:not(.touch) .button.positive:hover:not(.disabled):not(.working) {
 .style-list li.selected .aspect-square, .style-list li.selected .aspect-tall, .style-list li.selected .aspect-wide {
     border-color: #fff;
 }
-li .aspect-square {
+ .aspect-square {
     height: 22px;
     margin: 0 2px 0 7px;
     width: 22px;
 }
-li .aspect-wide {
+ .aspect-wide {
     height: 18px;
     margin-left: 5px;
     width: 26px;
 }
-li .aspect-tall {
+ .aspect-tall {
     border: 2px solid hsla(0, 0%, 100%, .6);
     border-radius: 2px;
     height: 26px;
     margin: 0 4px 0 9px;
     width: 18px;
 }
-li .aspect-square, li .aspect-wide {
+ .aspect-square,  .aspect-wide {
     border: 2px solid hsla(0, 0%, 100%, .6);
     border-radius: 2px;
 }

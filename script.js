@@ -41,6 +41,8 @@ document.querySelectorAll('.style-select').forEach(function(option) {
         const selectedValue = this.getAttribute('data');
         console.log('Selected lighting option:', selectedValue);
         document.getElementById("style-type-label").innerHTML = selectedValue;
+        document.getElementById('style-type-img').removeAttribute("hidden");
+        document.getElementById('style-type-img').setAttribute('src','images/'+selectedValue+'.webp');
     });
 });
 
@@ -56,6 +58,8 @@ document.querySelectorAll('.color-selected').forEach(function(option) {
         const selectedValue = this.getAttribute('data');
         console.log('Selected lighting option:', selectedValue);
         document.getElementById("color-type-label").innerHTML = selectedValue;
+        document.getElementById('color-type-img').removeAttribute("hidden");
+        document.getElementById('color-type-img').setAttribute('src','images/'+selectedValue+'.webp');
     });
 });
 
@@ -71,6 +75,8 @@ document.querySelectorAll('.light-selected').forEach(function(option) {
         const selectedValue = this.getAttribute('data');
         console.log('Selected lighting option:', selectedValue);
         document.getElementById("lighting-type-label").innerHTML = selectedValue;
+        document.getElementById('lighting-type-img').removeAttribute("hidden");
+        document.getElementById('lighting-type-img').setAttribute('src','images/'+selectedValue+'.webp');
     });
 });
 
@@ -86,5 +92,7 @@ document.querySelectorAll('.composition-selected').forEach(function(option) {
         const selectedValue = this.getAttribute('data');
         console.log('Selected lighting option:', selectedValue);
         document.getElementById("composition-type-label").innerHTML = selectedValue;
+        document.getElementById('composition-type-img').removeAttribute("hidden");
+        document.getElementById('composition-type-img').setAttribute('src','images/'+selectedValue+'.webp');
     });
 });

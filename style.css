@@ -157,6 +157,7 @@ hr {
     text-align: center;
     transition: all .15s linear;
     position: relative;
+    cursor: pointer;
 }
 .app-item img {
     width: 92px;

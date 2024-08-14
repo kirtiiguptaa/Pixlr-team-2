@@ -100,7 +100,7 @@ document.querySelectorAll('.composition-selected').forEach(function(option) {
 
 // price
 
-  <script>
+
       
 
         function month()
@@ -125,4 +125,4 @@ document.querySelectorAll('.composition-selected').forEach(function(option) {
           console.log("year");
 
             }
-        </script>
+      

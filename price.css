@@ -425,4 +425,11 @@ input[type=checkbox] {
     h3.row-title {
         font-size: 1.6rem !important;
     }
+.pricing-plan.plus {
+    margin-top: 10px;
+}
+    .price-products {
+    
+    margin-top: 84px !important;
+}
 }

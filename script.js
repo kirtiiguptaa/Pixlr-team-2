@@ -96,3 +96,33 @@ document.querySelectorAll('.composition-selected').forEach(function(option) {
         document.getElementById('composition-type-img').setAttribute('src','images/'+selectedValue+'.webp');
     });
 });
+
+
+// price
+
+  <script>
+      
+
+        function month()
+        {
+            document.querySelectorAll("#m1,#m2,#m3").forEach(element => {
+                element.classList.remove("price-dnone")
+            });;
+            document.querySelectorAll("#y1,#y2,#y3").forEach(element => {
+                element.classList.add("price-dnone");
+            });
+            console.log("helll");
+        }
+      
+        function year()
+        {
+            document.querySelectorAll("#m1,#m2,#m3").forEach(element => {
+                element.classList.add("price-dnone")
+            });;
+            document.querySelectorAll("#y1,#y2,#y3").forEach(element => {
+                element.classList.remove("price-dnone");
+            });
+          console.log("year");
+
+            }
+        </script>

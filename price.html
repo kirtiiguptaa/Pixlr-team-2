@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editing Tools Pricing and Plans - Pixlr Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"/>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="price.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="wrap">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <a href="index.html"><img src="images/pixlr-logo.svg" alt=""></a>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="price.html">Pricing</a></li>
+                        <li><a href="#"><img src="images/user.svg" alt="">Sign up / Log in</a></li>
+                        <li><a href="#"><img src="images/trypermium.svg" alt="">Try premium</a></li>
+                        <li><button><img src="images/notification.svg" alt=""></button></li>
+                        <div class="dropdown">
+                            <button class="dropbtn"><img src="images/menu.svg" alt=""></button>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="#"><img src="images/e-icon.svg" alt="">Pixlr Editor</a>
+                                    <a href="#"><img src="images/x-icon.svg" alt="">Pixlr Express</a>
+                                    <a href="#"><img src="images/d-icon.svg" alt="">Pixlr Designer</a>
+                                    <a href="#"><img src="images/b-icon.svg" alt="">Batch Editor</a>
+                                    <a href="#"><img src="images/bg-icon.svg" alt="">Remove BG</a>
+                                    <br class="mob-menu">
+                                    <a href="#" class="mob-menu"><img src="images/person.svg" alt="">Sign up / Log in</a>
+                                    <a href="#" class="mob-menu"><img src="images/bell.svg" alt="">Latest News</a>
+                                    <br>
+                                    <a href="#"><img src="images/face-swap 2.svg" alt="">AI Face Swap</a>
+                                    <a href="#"><img src="images/image-generator.svg" alt="">AI Image Generator</a>
+                                    <a href="#"><img src="images/photo-collage.svg" alt="">Phot Collage Maker</a>
+                                    <details>
+                                        <summary>
+                                            <img src="images/tool.svg" alt="">More Tools ..
+                                        </summary>
+                                        <a href="#"><img src="images/converter.svg" alt="">File Converter</a>
+                                    </details>
+                                    <br>
+                                    <a href="#"><img src="images/mobile.svg" alt="">Mobile Apps</a>
+                                    <a href="#"><img src="images/desktop.svg" alt="">Desktop Apps</a>
+                                    <a href="#"><img src="images/templates.svg" alt="">Design Templates</a>
+                                    <br>
+                                    <a href="#"><img src="images/video.svg" alt="">Video Tutorials</a>
+                                    <a href="#"><img src="images/learn.svg" alt="">Learn & Education</a>
+                                    <a href="#"><img src="images/support.svg" alt="">Contact & Support</a>
+                                    <a href="#"><img src="images/premium (2).svg" alt="">Pricing & Free Trial</a>
+                                  </div>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="pricing">
+                <div class="price-center">
+                    <span class="row-label">Level up!</span>
+                    <h1 class="row-title">We got a plan for you!</h1>
+                    <p>Pay monthly or yearly and enjoy a 7 day free trial. Cancel whenever you feel like it - no fuss and no hoops.</p>
+                </div>
+                <div id="interval-toggle">
+                    <input type="checkbox" class="toggle-check" id="payment-interval" checked="">
+                    <label for="payment-interval" class="payment-interval">
+                        <div class="switch-interval-monthly" onclick="month()">Monthly</div>
+                        <div class="switch-interval-yearly" onclick="year()">Yearly <span class="yearly-badge">Save more</span></div>
+                    </label>
+                </div>
+                <div id="pricing-plans" class="wrap pricing-plans monthly">
+                    <div class="pricing-plan plus">
+                        <h2>
+                            <img src="images/plus-icon.svg" width="32" height="32" alt="">
+                            Plus
+                        </h2>
+                        <p>I just need the basics!</p>
+                        <ul>
+                            <li>Ad-Free</li>
+                            <li>Unlimited saves</li>
+                            <li>80 monthly AI Credits</li> 
+                        </ul>
+                        <div class="price-button button">Subscribe now!</div>
+                        <div class="price is-monthly" id="m1">
+                            <span id="plus-monthly" class="amount">$ 1.99</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                        <div class="price is-yearly price-dnone"  id="y1">
+                            <div class="discounted"><span class="amount-strike">$ 1.99</span><span class="discount-badge">Save 50%</span></div>
+                            <span id="plus-yearly" class="amount" aria-valuemax="0.99">$ 0.99</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-plan premium">
+                        <div class="popular">Popular</div>
+                        <h2>
+                            <img src="images/premium-icon.svg" width="32" height="32" alt="">
+                            Premium
+                        </h2>
+                        <p>Full access to all the premium features across all platforms with a nice chunk of AI credits</p>
+                        <ul>
+                            <li>Ad-Free</li>
+                            <li>Unlimited saves</li>
+                            <li>1000 monthly AI Credits</li>
+                            <li>Private mode for AI Generations</li>
+                            <li>Big library of fonts, templates, elements, animations and more</li>
+                        </ul>
+                        <div class="price-button button premium-btn">Start Free Trial!</div>
+                        <div class="price is-monthly" id="m2">
+                            <span id="premium-monthly" class="amount">$ 7.99</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                        <div class="price is-yearly price-dnone" id="y2">
+                            <div class="discounted"><span class="amount-strike">$ 7.99</span><span class="discount-badge">Save 38%</span></div>
+                            <span id="premium-yearly" class="amount" aria-valuemax="0.99">$ 4.90</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-plan team">
+                        <h2>
+                            <img src="images/team-icon.svg" width="32" height="32" alt="">
+                            Team
+                        </h2>
+                        <p>Manage your team members and collaborate. Five premium seats included.</p>
+                        <ul>
+                            <li>Ad-Free</li>
+                            <li>Unlimited saves</li>
+                            <li>5 Premium seats</li>
+                            <li>1000 monthly AI Credits/seat</li>
+                        </ul>
+                        <div class="price-button button">Subscribe now!</div>
+                        <div class="price is-monthly" id="m3">
+                            <span id="team-monthly" class="amount">$ 12.99</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                        <div class="price is-yearly price-dnone" id="y3">
+                            <div class="discounted"><span class="amount-strike">$ 12.99</span><span class="discount-badge">Save 31%</span></div>
+                            <span id="team-yearly" class="amount" aria-valuemax="0.99">$ 9.91</span>
+                            <span class="amonth">per month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-products">
+                    <span class="row-label">Something else?</span>
+                    <h3 class="row-title">Other products</h3>
+                </div>
+
+                <div class="pricing-plans">
+                    <div class="pricing-plan wide">
+                        <div class="pricing-plan-left">
+                            <h2>
+                                <img src="images/credit-icon.svg" alt="">
+                                AI Credit Pack
+                            </h2>
+                            <p>Top off you account with additional AI-credits to get more out of the Generative tools.</p>
+                        </div>
+                        <div class="pricing-plan-right">
+                            <div class="credit-button button">Add Credits</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-plan wide">
+                        <div class="pricing-plan-left">
+                            <h2>
+                                <img src="images/gift-card-icon.svg" alt="">
+                                Gift Card
+                            </h2>
+                            <p>A Plus or Premium subscription is the perfect gift to a creative family member or friend.</p>
+                        </div>
+                        <div class="pricing-plan-right">
+                            <div class="credit-button button">Buy Gift Card</div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-plan wide">
+                        <div class="pricing-plan-left">
+                            <h2>
+                                <img src="images/enterprise-icon.svg" alt="">
+                                Enterprise
+                            </h2>
+                            <p>Need more seats or a custom API solution? Contact us for more information on the Enterprise services we provide.</p>
+                        </div>
+                        <div class="pricing-plan-right">
+                            <div class="credit-button button">Contact Us</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-products">
+                    <span class="row-label">Always Free</span>
+                    <h3 class="row-title">Pixlr for Education</h3>
+                </div>
+
+                <div class="pricing-plans">
+                    <div class="pricing-plan wide">
+                        <div class="pricing-plan-left">
+                            <h2>
+                                <img src="images/education-icon.svg" alt="">
+                                Education Plan
+                            </h2>
+                            <p>Pixlr for Education offers FREE Pixlr upgrades via the PixlrEdu subscription to schools and higher learning institutions worldwide. The program benefits students, educators, teachers and even lifelong learners like yourself who are interested to improve on design technical skills and develop a design centric mindset.</p>
+                        </div>
+                        <div class="pricing-plan-right">
+                            <div class="credit-button button">Learn More</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="faq">
+                <div class="faq-top">
+                    <span>Frequently Asked</span>
+                    <h2 class="faq-title">Do you have a Question?</h2>
+                </div>
+                <div class="faq-content">
+                    <details>
+        
+                        <summary>How do I subscribe?</summary>
+                        You can subscribe to Pixlr Plus, Premium and Teams either here via the website or in any of our mobile apps on Android and iOS.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Where can I use my subscription?</summary>
+                        Purchasing any subscription from Pixlr will give you the same access to all platforms, you will be able to enjoy Plus or Premium access on web, desktop and Mobile devices via your Pixlr Account.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>What are my payment options?</summary>
+                        Enter in your Visa or Mastercard credit/debit card information, or choose PayPal. Your receipt will be sent to the email address you used to subscribe to Pixlr. <br><br> On mobile apps your payment is processed through your device’s app store account.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>How come my purchase didn't go through?</summary>
+                        Confirm with your bank if they allow international purchases as they may block international and subscription based transaction.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>How come I am unable to upgrade my plan?</summary>
+                        Upgrading plan are only available via credit/debit card purchases, it is not available via Paypal. If you previously purchase using Paypal, kindly email to <a href="mailto:info@pixlr.com">info@pixlr.com</a> and our team will assist you.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Are there other payment methods aside credit card and Paypal</summary>
+                        Kindly email to <a href="mailto:info@pixlr.com">info@pixlr.com</a> and our team can help you with purchases via alternate payment methods.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Do you accept Visa/MC cash cards?</summary>
+                        Due to the subscription nature, we are unable to accept cash card.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>How do I cancel my subscription?</summary>
+                        You can cancel at any time in your <a href="/myaccount">My Account</a> page. Once you cancel you’ll be able to access premium features until your subscription period has ended.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>What is the refund policy?</summary>
+                        Pixlr is unable to process any refunds for your subscription once your payment has been processed. If you subscribed via a mobile app then all subscriptions are managed through your app store - to request a refund you’ll need to contact the store directly.
+                    </details>
+                
+                    
+                        <details>
+                    
+                        <summary>Does my AI-Credits Expire?</summary>
+                        There are two types of AI-credits, the once you have while your subscription is active are topped off each time the subscription renews, i.e. if you are on a monthly premium subscription and have 863 credits left on the date of the renewal that will be reset to 1000. If you cancel your subscription the subscription credits will reset to 0. The second type of credits are the Credit Packs, these credits will never expires and are counted separately from the subscription credits. If you have a subscription and bought a credit pack your subscription credits will be used first and when they are gone we will start using credits from the Credit Packs. 
+                    </details>
+                </div>
+            </section>
+    
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <ul>
+                            <li class="column-head">Company</li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Pixlr Suite</a></li>
+                            <li><a href="#">Pixlr Mobile</a></li>
+                            <li><a href="#">Pixlr Desktop</a></li>
+                        </ul>
+                        <ul>
+                            <li class="column-head">Legal</li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">License Agreement</a></li>
+                            <li><a href="#">AI Generator License</a></li>
+                        </ul>
+                        <ul>
+                            <li class="column-head">Products</li>
+                            <li><a href="#">Pixlr Editor</a></li>
+                            <li><a href="#">Pixlr Express</a></li>
+                            <li><a href="#">Pixlr Designer</a></li>
+                            <li><a href="#">Batch Editor</a></li>
+                            <li><a href="#">Remove Background</a></li>
+                        </ul>
+                        <ul>
+                            <li class="column-head">Help</li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Developer</a></li>
+                        </ul>
+                        <ul>
+                            <li class="column-head">Follow Us</li>
+                            <li><a href="#" target="_blank">Blog</a></li>
+                            <li><a href="#" target="_blank">Discord</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                            <li><a href="#" target="_blank">YouTube</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer-language">
+                        <div class="language-selector">
+                            <div class="language-icon">
+                                <img src="images/language.svg" alt="language-icon" class="languageicon">
+                            </div>
+                            <div class="languages">
+                                <span>English</span>
+                                <span>Bahasa Indonesia</span>
+                                <span>Bahasa Melayu</span>
+                                <span>Čeština</span>
+                                <span>Dansk</span>
+                                <span>Deutsch</span>
+                                <span>Español</span>
+                                <span>Filipino</span>
+                                <span>Français</span>
+                                <span>Hrvatski</span>
+                                <span>Italiano</span>
+                                <span>Nederlands</span>
+                                <span>Norsk</span>
+                                <span>Polski</span>
+                                <span>Português</span>
+                                <span>Português (Brasileiro)</span>
+                                <span>Romanian</span>
+                                <span>Србија</span>
+                                <span>Русский</span>
+                                <span>Suomi</span>
+                                <span>Svenska</span>
+                                <span>Türkçe</span>
+                                <span>Tiếng Việt</span>
+                                <span>ไทย</span>
+                                <span>Ελληνικά</span>
+                                <span>한국어</span>
+                                <span>日本語</span>
+                                <span>中文</span>
+                                <span>繁體中文</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="footer-bottom">
+                    <img src="images/pixlr-logo.svg" width="90" height="20" alt="Pixlr.com">
+                    <div class="copyright">
+                        Pixlr Pte Ltd © 2024.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+        
+    <script src="script.js"></script>
+</body>
+</html>

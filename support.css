@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=League+Spartan&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+header {
+    position: absolute;
+}
+
+.wrap {
+    background-image: radial-gradient(ellipse 50% 100% at 50% -10%, #7889df80, #778ae800);
+    background-repeat: no-repeat;
+    background-size: 100% 800px;
+    width: 100% !important;
+}
+
+.support {
+    position: relative;
+    padding: 150px 20px;
+}
+
+.support-head {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.row-label {
+    margin-top: 50px;
+}
+
+section.support:after, section.support:before {
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    pointer-events: none;
+    position: absolute;
+}
+
+section.support:before {
+    background-image: radial-gradient(ellipse 100% 100% at 100% 0, #da70a542, #e877af00);
+    height: 800px;
+    right: 0;
+    top: 0;
+    width: 800px;
+}
+
+section.support:after {
+    background-image: radial-gradient(ellipse 100% 100% at 50% 100%, #c870da42, #e877af00);
+    background-size: 100% 100%;
+    bottom: 0;
+    height: 600px;
+    left: 0;
+    width: 100%;
+}
+
+h2.row-title {
+    font-size: 3rem !important;
+}
+
+.support p {
+    max-width: 800px;
+    color: #ffffffcc;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+.reels-boxes,
+.support-boxes {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.reels {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.box-shine {
+    background: linear-gradient(135deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0));
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    transition: all .15s linear;
+    flex: 1;
+    max-width: 340px;
+    min-width: 250px;
+}
+
+.box-shine:after {
+    border: 1px solid #ffffff20;
+    border-radius: inherit;
+    box-sizing: border-box;
+    content: "";
+    inset: 0;
+    -webkit-mask-image: linear-gradient(to bottom right, #000, transparent 40%, transparent 60%, #000);
+    mask-image: linear-gradient(to bottom right, #000, transparent 40%, transparent 60%, #000);
+    pointer-events: none;
+    position: absolute;
+    transition: all .15s linear;
+    z-index: 3;
+}
+
+.box-shine:hover {
+    background-position: 0 0;
+}
+
+.box-shine .icon {
+    height: 42px;
+    width: 42px;
+}
+
+.box-shine h3 {
+    color: #ffffffee;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.box-shine p {
+    color: hsla(0, 0%, 100%, .7);
+    margin-top: 5px;
+}
+
+.box-shine a {
+    color: #7286ff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .1s linear;
+}
+
+.box-shine a:hover:not(.button) {
+    color: #9baaff;
+}
+
+.watch-learn {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.learn-videos {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.videos {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    margin-top: 50px !important;
+}
+
+.videos .box-shine {
+    max-width: 400px;
+    min-width: 400px;
+    padding: 10px;
+}
+
+.videos .box-shine iframe {
+    border-radius: 18px;
+}
+
+.videos::-webkit-scrollbar {
+    width: 3px;
+    height: 8px;
+}
+
+.videos::-webkit-scrollbar-track {
+    background: transparent; 
+}
+   
+.videos::-webkit-scrollbar-thumb {
+    background:hsla(0, 0%, 100%, .1); 
+    border-radius: 10px;
+}
+
+.videos::-webkit-scrollbar-thumb:hover {
+    background-color: #565f6a;
+}
+
+.support-help {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    text-align: center;
+}
+
+@media (max-width: 825px) {
+    .support {
+        padding: 80px 10px;
+    }
+    .row-label {
+        font-size: .8rem;
+        margin-bottom: 5px;
+        padding: 2px 10px 0 13px;
+    }
+    h2.row-title {
+        font-size: 1.9rem !important;
+    }
+    .reels-boxes,
+    .support-boxes {
+        margin-top: 40px;
+        padding: 0;
+    }
+    .watch-learn,
+    .support-help {
+        margin-top: 40px;
+    }
+}

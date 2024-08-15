@@ -25,6 +25,10 @@ button {
     transition: all .15s linear;
     width: 42px;
 }
+header {
+    z-index: 99;
+    width: 100%;
+}
 nav {
     display: flex;
     align-items: center;
